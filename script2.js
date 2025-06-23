@@ -43,4 +43,6 @@ if (personalMovieDB.count <= 10){
   alert('Ого, багато вже подивився');
 } else if (personalMovieDB.count > 30) {
   alert('Та ти вже можеш йти на кінокритика вчитись)');
+} else {
+  alert('якась помилка');
 }
