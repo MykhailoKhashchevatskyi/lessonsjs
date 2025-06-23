@@ -15,7 +15,7 @@
 'use strict';
 
 // Код возьмите из предыдущего домашнего задания
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+const numberOfFilms = +prompt('Скільки фільмів ти переглянув?', '');
 
 const personalMovieDB = {
     count: numberOfFilms,
