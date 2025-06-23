@@ -13,7 +13,18 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-const numberOfFilms = +prompt('Сколько фильмов вы уже посмотрели?', '');
+// Код возьмите из предыдущего домашнего задания
+let numberOfFilms;
+
+function start(){
+  numberOfFilms = prompt('Скільки фільмів ти переглянув?', '');
+
+  while (numberOfFilms == '' || numberOfFilms == null || isNaN(numberOfFilms)) {
+    numberOfFilms = prompt('Скільки фільмів ти переглянув?', '');
+  }
+}
+
+start();
 
 const personalMovieDB = {
     count: numberOfFilms,
@@ -23,11 +34,53 @@ const personalMovieDB = {
     privat: false
 };
 
-console.log(personalMovieDB);
 
-for (i = 0; i < 2; i++){
-  const a = prompt('Один из последних просмотренных фильмов?', ''),
-        b = prompt('На сколько оцените его?', '');
-  
-  personalMovieDB.movies[a] = b;
+
+function rememberMyFilms(){
+  for (let i = 0; i < 2; i++){
+    const a = prompt('Один из последних просмотренных фильмов?', ''),
+          b = prompt('На сколько оцените его?', '');
+    
+        if (a != null && b != null && a != '' && b != '' && a.length < 50) {
+          personalMovieDB.movies[a] = b;
+          console.log('done');
+        } else {
+          i--;
+        }
+  }
 }
+
+rememberMyFilms();
+
+
+
+function detectLevel(){
+  if (personalMovieDB.count <= 10){
+    alert('"Щось маловато фільмів ти глянув)"');
+  } else if (personalMovieDB.count >= 10 && personalMovieDB <=30) {
+    alert('Ого, багато вже подивився');
+  } else if (personalMovieDB.count > 30) {
+    alert('Та ти вже можеш йти на кінокритика вчитись)');
+  } else {
+    alert('якась помилка');
+  }
+}
+
+detectLevel();
+
+
+function writeYourGenres(){
+  for (let i = 1; i <= 3; i++){
+    personalMovieDB.genres[i - 1] = prompt(`твій улюблений жанр під номером ${i} ?`)
+  }
+}
+
+writeYourGenres();
+
+function showMyDB(a) {
+  if (!a){
+    console.log(personalMovieDB);
+  }
+}
+
+showMyDB(personalMovieDB.privat);
