@@ -13,7 +13,6 @@ P.S. Функции вызывать не обязательно*/
 
 'use strict';
 
-// Код возьмите из предыдущего домашнего задания
 let numberOfFilms;
 
 function start(){
@@ -34,8 +33,6 @@ const personalMovieDB = {
     privat: false
 };
 
-
-
 function rememberMyFilms(){
   for (let i = 0; i < 2; i++){
     const a = prompt('Один з останніх переглянутих фільмів?', ''),
@@ -49,10 +46,7 @@ function rememberMyFilms(){
         }
   }
 }
-
 rememberMyFilms();
-
-
 
 function detectLevel(){
   if (personalMovieDB.count <= 10){
@@ -65,7 +59,6 @@ function detectLevel(){
     alert('якась помилка');
   }
 }
-
 detectLevel();
 
 
@@ -74,7 +67,6 @@ function writeYourGenres(){
     personalMovieDB.genres[i - 1] = prompt(`твій улюблений жанр під номером ${i} ?`)
   }
 }
-
 writeYourGenres();
 
 function showMyDB(a) {
